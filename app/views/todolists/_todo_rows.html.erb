@@ -1,0 +1,31 @@
+<div class="panel panel-default">
+        <div class="panel-heading">
+            <nav class="navbar navbar-default">
+              <div class="container-fluid">
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="#">
+                    <%= todolist.title %>
+                  </a>
+                </div> 
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-5">
+                    <p class="navbar-text navbar-right">
+                        <a href="#" class="navbar-link"><span class="glyphicon glyphicon-check"></span></a>
+                        <a href="#" class="navbar-link"><span class="glyphicon glyphicon-trash"></span></a>
+                    </p>
+                </div>
+              </div>
+            </nav>
+        </div>
+        <div class="panel-body">
+          <div class="input-group">
+              <input type="text" class="form-control" name="tesk_text" data-id="<%=todolist.id %>" placeholder="Type the task text" aria-describedby="basic-addon2">
+                <span class="input-group-btn">
+                    <%= tag('input', type:'button', class:['btn','btn-default','btn-success','button-new'], value:'Add task', id:'AddTask') %>
+                </span>
+          </div>
+            <p id="notice"><%= notice %></p>
+          <table class="table table-bordered table-hover">
+                <%= render partial: 'task_rows', locals: {tasks: @tasks, todolist: todolist} %>
+          </table>
+        </div>
+      </div>

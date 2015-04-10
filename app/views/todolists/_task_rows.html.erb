@@ -1,0 +1,13 @@
+<% tasks.each do |task| %>
+  <% if todolist.id == task.parentid %>
+    <tr>
+        <td><%= tag("input", type: 'checkbox', disabled: false) %></td>
+        <td><%= task.title %></td>
+        <td>
+            <%= link_to '', todolist ,class:"glyphicon glyphicon-eye-open" %>
+            <%= link_to '', edit_todolist_path(todolist), class:"glyphicon glyphicon-pencil" %>
+            <%= link_to '', todolist, method: :delete, data: { confirm: 'Are you sure?' }, class:"glyphicon glyphicon-trash" %>
+        </td>
+    </tr>
+  <% end  %>
+<% end %>

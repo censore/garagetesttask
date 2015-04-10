@@ -1,0 +1,10 @@
+<div id="loginModal" class="container" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <% @todolists.each do |todolist| %>
+      <%= render partial: 'todo_rows', locals: {todolist: todolist} %>
+    <% end %>
+    <%= content_tag(:button,content_tag(:span, "", :class=>("glyphicon glyphicon-plus-sign")) + " Add ToDo list",:class=>("btn btn-default btn-primary") )  %>
+  </div>
+</div>
+
+
